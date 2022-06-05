@@ -31,22 +31,23 @@ public class BowlingService {
                 if (match.getMatchState().equals(MatchState.SecondInningsInProgress) && match.getPlayingTeams().get(0).getTotalScore() < match.getPlayingTeam().getTotalScore())
                     return;
                 String balldata = scanner.next();
-                Ball ball = null;
+                Ball ball = new Ball();
                 try {
                     ball = BallAdapter.convertIntoBall(balldata);
                 } catch (IllegalArgumentException e) {
                     ball.setRunsScored(0);
-                    ball.setBallTpe(BallTpe.Other);
+                    ball.setBallTpe(BallTpe.Invalid);
                 } finally {
-                    if (ball.getBallTpe().equals(BallTpe.No) || ball.getBallTpe().equals(BallTpe.Wide))
-                        j--;
+                    if (isValidBall(ball)) j--;
                     log.info("ball type is {}", ball.getBallTpe());
                     matchService.ballBowled(ball, match);
                 }
             }
         }
+    }
 
-
+    private boolean isValidBall(Ball ball) {
+        return (ball.getBallTpe().equals(BallTpe.No) || ball.getBallTpe().equals(BallTpe.Wide) || ball.getBallTpe().equals(BallTpe.Invalid));
     }
 
 }

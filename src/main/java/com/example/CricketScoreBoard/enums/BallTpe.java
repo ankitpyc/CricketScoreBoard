@@ -9,6 +9,7 @@ public enum BallTpe {
     Wicket("Wicket", 0),
     Six("6", 6),
     Other("other",0),
+    Invalid("invalid",0),
     Four("4", 4);
     private String ballName;
     private int extra;
