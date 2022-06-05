@@ -13,13 +13,6 @@ import java.util.Objects;
 @Service
 @Slf4j
 public class ScoreBoardService {
-    private int playerName;
-    private int ballsPlayed;
-    private int totalFours;
-    private int totalSixes;
-    private int totalBalls;
-
-    private MatchService matchService;
 
     public void printScoreCard(Match match) {
         System.out.println("---------------------------------------------------");

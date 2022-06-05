@@ -129,6 +129,7 @@ public class MatchService {
         Team teamA = Team.builder().teamIndex(teamIndex++).nextDownIndex(3).players(new ArrayList<>()).totalWickets(0).totalScore(0).totalWickets(0).build();
         System.out.println("Enter Team Details");
         for (int i = 0; i < match.getTotalPlayers(); i++) {
+            System.out.println(String.format("Enter Player %s for Team",i+1));
             String playerName = scanner.next();
             Player player = Player.builder().playerName(playerName).runsScored(0).totalFours(0).totalSixes(0).ballsPlayed(0).StrikeRate(0.0).build();
             teamA.getPlayers().add(player);
