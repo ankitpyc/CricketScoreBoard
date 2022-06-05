@@ -19,4 +19,6 @@ public class Team {
     private Integer totalScore;
     private int nextDownIndex;
     private int totalWickets;
+    private List<Overs> OverPlayed;
+
 }

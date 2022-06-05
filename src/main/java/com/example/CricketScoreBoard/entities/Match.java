@@ -20,5 +20,4 @@ public class Match {
     private int totalOvers;
     private int currOvers;
     private MatchState matchState;
-    private List<Overs> OversBowled;
 }

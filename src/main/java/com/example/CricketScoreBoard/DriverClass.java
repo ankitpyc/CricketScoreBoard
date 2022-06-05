@@ -34,13 +34,15 @@ public class DriverClass {
         System.out.println("Enter total no of Overs");
         match.setTotalOvers(scanner.nextInt());
         match.setPlayingTeams(new ArrayList<>());
-        match.setOversBowled(new ArrayList<>());
         Team teamA = matchService.initializeTeam(match,scanner);
+        teamA.setOverPlayed(new ArrayList<>());
         match.setMatchState(MatchState.FirstInningsInProgress);
         matchService.initializeMatch(match, teamA);
         bowlingService.bowlingInit(match, scanner);
         scoreBoardService.printInningsScoreCard(teamA);
         Team teamB = matchService.initializeTeam(match,scanner);
+        teamB.setOverPlayed(new ArrayList<>());
+
         matchService.addTeam(match, teamB);
         match.setMatchState(MatchState.SecondInningsInProgress);
         matchService.initializeMatch(match, teamB);

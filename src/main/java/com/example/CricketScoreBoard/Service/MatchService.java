@@ -28,9 +28,9 @@ public class MatchService {
     }
 
     private Overs getCurrOver(Match match) {
-        if (match.getOversBowled().size() == 0)
-            match.getOversBowled().add(Overs.builder().overIndex(1).extrasBowled(0).ballList(new ArrayList<>()).extrasBowled(0).build());
-        return match.getOversBowled().get(match.getOversBowled().size() - 1);
+        if (match.getPlayingTeam().getOverPlayed().size() == 0)
+            match.getPlayingTeam().getOverPlayed().add(Overs.builder().overIndex(1).extrasBowled(0).ballList(new ArrayList<>()).extrasBowled(0).build());
+        return match.getPlayingTeam().getOverPlayed().get(match.getPlayingTeam().getOverPlayed().size() - 1);
     }
 
     private void executeBall(Match match, Overs overs, Ball ball) {

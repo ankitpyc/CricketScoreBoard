@@ -21,7 +21,7 @@ public class BowlingService {
     public void bowlingInit(Match match, Scanner scanner) {
         for (int i = 0; i < match.getTotalOvers(); i++) {
             Overs overs = Overs.builder().overIndex(i + 1).ballList(new ArrayList<>()).extrasBowled(0).build();
-            match.getOversBowled().add(overs);
+            match.getPlayingTeam().getOverPlayed().add(overs);
             for (int j = 0; j < 6; j++) {
                 if(match.getMatchState().equals(MatchState.MatchFinished) || match.getMatchState().equals(MatchState.FirstInnings))
                     return;
